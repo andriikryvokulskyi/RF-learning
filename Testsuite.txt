@@ -1,0 +1,25 @@
+*** Settings ***
+Test Teardown     Close All Browsers
+Library           Selenium2Library
+Resource          Keywords.robot
+Resource          Variables.robot
+
+*** Test Cases ***
+TC-1-1: Login with valid credentials
+    [Tags]    Regression
+    Given Home Page is open
+    When User login with valid credentials
+    Then User succesfully logged in the app
+    And Main Dashboard elements are displayed
+
+TC-1-2: Login with invalid credentials
+    [Tags]    Regression    Sanity
+    Given Home Page is open
+    When User login with invalid credentials
+    Then Login in the app should fail
+
+TC-1-3: Logout verification
+    [Tags]    Smoke
+    Given User logged in the app
+    When User click Logout
+    Then Logged out successfully
