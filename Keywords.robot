@@ -39,8 +39,8 @@ Logged out successfully
     Location Should Be    ${Logout_url}
 
 User click over the Main Menu buttons
-    Element Should Be Visible    //*[@id="wrapper"]/div[2]
     Set Selenium Speed    0.5
+    Element Should Be Visible    //*[@id="wrapper"]/div[2]
 
 Able to navigate through Main Menu smooth
     Click Element    id=menu_admin_viewAdminModule
