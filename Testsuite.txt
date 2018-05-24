@@ -6,20 +6,28 @@ Resource          Variables.robot
 
 *** Test Cases ***
 TC-1-1: Login with valid credentials
-    [Tags]    Regression
+    [Tags]    Regression Sanity
     Given Home Page is open
     When User login with valid credentials
     Then User succesfully logged in the app
     And Main Dashboard elements are displayed
 
 TC-1-2: Login with invalid credentials
-    [Tags]    Regression    Sanity
+    [Tags]    Regression
     Given Home Page is open
     When User login with invalid credentials
     Then Login in the app should fail
 
 TC-1-3: Logout verification
-    [Tags]    Smoke
+    [Tags]    Regression
     Given User logged in the app
     When User click Logout
     Then Logged out successfully
+
+TC-1-4: Verify ability to navigate through Main Menu
+    [Tags]    Smoke
+    Given User logged in the app
+    When User click over the Main Menu buttons
+    Then Able to navigate through Main Menu smooth
+
+TC-1-5: Name
