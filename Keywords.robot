@@ -59,3 +59,19 @@ Able to navigate through Main Menu smooth
     Element Should Be Visible    xpath=//*[@id="content"]/div/div[1]
     Click Element    id=menu_directory_viewDirectory
     Element Should Be Visible    xpath=//*[@id="content"]/div[1]/div[1]
+
+User navigate to Checkboxes page
+    Open Browser    ${Checkboxes_url}    chrome
+    Maximize Browser Window
+    Page Should Contain Checkbox    ${Checkbox_1}
+    Checkbox Should Not Be Selected    ${Checkbox_1}
+    Page Should Contain Checkbox    ${Checkbox_2}
+    Checkbox Should Be Selected    ${Checkbox_2}
+
+Check or uncheck checkboxes at page
+    Select Checkbox    ${Checkbox_1}
+    Unselect Checkbox    ${Checkbox_2}
+
+Changes are made successfully
+    Checkbox Should Be Selected    ${Checkbox_1}
+    Checkbox Should Not Be Selected    ${Checkbox_2}
